@@ -1,0 +1,11 @@
+product_id,product_name,category,unit_price,stock_quantity
+501,Laptop,Electronics,55000,12
+502,Wireless Mouse,Accessories,1200,85
+503,Mechanical Keyboard,Accessories,4500,42
+504,Monitor,Electronics,18000,25
+505,Headphones,Audio,3500,60
+506,Smartphone,Electronics,32000,30
+507,USB-C Hub,Accessories,2200,70
+508,Webcam,Accessories,2800,35
+509,Power Bank,Mobile,1800,55
+510,Bluetooth Speaker,Audio,4200,28

@@ -1,0 +1,17 @@
+config {
+  type: "table",
+  schema: "gold",
+  description: "Customer dimension for the sales star schema."
+}
+
+SELECT
+  FARM_FINGERPRINT(CAST(customer_id AS STRING)) AS customer_key,
+
+  customer_id,
+  customer_name,
+  state,
+  signup_date
+
+FROM ${ref("customers")}
+
+WHERE customer_id IS NOT NULL

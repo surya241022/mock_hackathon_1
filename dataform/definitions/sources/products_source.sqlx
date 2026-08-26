@@ -1,0 +1,6 @@
+config {
+  type: "declaration",
+  database: "mock-trail-project-1",
+  schema: "bronze",
+  name: "products_raw"
+}

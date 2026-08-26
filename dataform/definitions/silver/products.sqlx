@@ -1,0 +1,16 @@
+config {
+  type: "table",
+  schema: "silver",
+  description: "Cleaned product master data from Bronze."
+}
+
+SELECT
+  CAST(product_id AS INT64) AS product_id,
+  TRIM(product_name) AS product_name,
+  TRIM(category) AS category,
+  SAFE_CAST(unit_price AS NUMERIC) AS unit_price,
+  SAFE_CAST(stock_quantity AS INT64) AS stock_quantity
+
+FROM ${ref("products_raw")}
+
+WHERE product_id IS NOT NULL

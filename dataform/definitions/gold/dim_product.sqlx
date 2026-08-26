@@ -1,0 +1,18 @@
+config {
+  type: "table",
+  schema: "gold",
+  description: "Product dimension for the sales star schema."
+}
+
+SELECT
+  FARM_FINGERPRINT(CAST(product_id AS STRING)) AS product_key,
+
+  product_id,
+  product_name,
+  category,
+  unit_price,
+  stock_quantity
+
+FROM ${ref("products")}
+
+WHERE product_id IS NOT NULL

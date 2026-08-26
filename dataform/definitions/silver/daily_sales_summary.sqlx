@@ -1,0 +1,17 @@
+config {
+  type: "table",
+  schema: "silver",
+  description: "Cleaned daily sales summary data from Bronze."
+}
+
+SELECT
+  SAFE_CAST(order_date AS DATE) AS order_date,
+  TRIM(state) AS state,
+  SAFE_CAST(total_orders AS INT64) AS total_orders,
+  SAFE_CAST(total_units AS INT64) AS total_units,
+  SAFE_CAST(total_sales AS NUMERIC) AS total_sales
+
+FROM ${ref("daily_sales_summary_raw")}
+
+WHERE order_date IS NOT NULL
+  AND state IS NOT NULL

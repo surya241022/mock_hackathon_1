@@ -1,0 +1,38 @@
+config {
+  type: "table",
+  schema: "gold",
+  description: "Date dimension for sales analysis."
+}
+
+WITH date_range AS (
+
+  SELECT
+    MIN(order_date) AS min_date,
+    MAX(order_date) AS max_date
+  FROM ${ref("sales_enriched")}
+
+)
+
+SELECT
+  CAST(FORMAT_DATE('%Y%m%d', date) AS INT64) AS date_key,
+
+  date AS full_date,
+
+  EXTRACT(YEAR FROM date) AS year,
+  EXTRACT(QUARTER FROM date) AS quarter,
+  EXTRACT(MONTH FROM date) AS month,
+  FORMAT_DATE('%B', date) AS month_name,
+
+  EXTRACT(WEEK FROM date) AS week_of_year,
+
+  EXTRACT(DAY FROM date) AS day_of_month,
+
+  EXTRACT(DAYOFWEEK FROM date) AS day_of_week,
+
+  FORMAT_DATE('%A', date) AS day_name
+
+FROM date_range,
+
+UNNEST(
+  GENERATE_DATE_ARRAY(min_date, max_date)
+) AS date

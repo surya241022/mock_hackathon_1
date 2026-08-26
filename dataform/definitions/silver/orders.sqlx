@@ -1,0 +1,20 @@
+config {
+  type: "table",
+  schema: "silver",
+  description: "Cleaned order transaction data from Bronze."
+}
+
+SELECT
+  CAST(order_id AS INT64) AS order_id,
+  SAFE_CAST(order_date AS DATE) AS order_date,
+  CAST(customer_id AS INT64) AS customer_id,
+  CAST(product_id AS INT64) AS product_id,
+  CAST(quantity AS INT64) AS quantity,
+  TRIM(status) AS status,
+  TRIM(payment_method) AS payment_method
+
+FROM ${ref("orders_raw")}
+
+WHERE order_id IS NOT NULL
+  AND customer_id IS NOT NULL
+  AND product_id IS NOT NULL

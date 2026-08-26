@@ -1,0 +1,5 @@
+dataformCoreVersion: 3.0.65
+defaultProject: mock-trail-project-1
+defaultLocation: asia-south1
+defaultDataset: gold
+defaultAssertionDataset: dataform_assertions

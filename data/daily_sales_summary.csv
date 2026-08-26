@@ -1,0 +1,24 @@
+order_date,state,total_orders,total_units,total_sales
+2026-02-01,Andhra Pradesh,1,1,55000
+2026-02-01,Telangana,1,2,2400
+2026-02-02,Karnataka,1,1,18000
+2026-02-02,Maharashtra,1,2,7000
+2026-02-03,Andhra Pradesh,1,1,4500
+2026-02-03,Tamil Nadu,1,1,32000
+2026-02-04,West Bengal,1,2,8400
+2026-02-05,Delhi,1,1,55000
+2026-02-05,Kerala,1,3,6600
+2026-02-06,Tamil Nadu,1,2,3600
+2026-02-07,Telangana,1,4,4800
+2026-02-08,Maharashtra,1,2,5600
+2026-02-09,Andhra Pradesh,1,1,3500
+2026-02-10,Telangana,1,2,9000
+2026-02-12,Maharashtra,1,1,18000
+2026-02-13,Tamil Nadu,1,3,3600
+2026-02-14,Andhra Pradesh,1,1,4200
+2026-02-15,West Bengal,1,1,55000
+2026-02-16,Kerala,1,2,3600
+2026-02-17,Delhi,1,2,4400
+2026-02-18,Tamil Nadu,1,1,3500
+2026-02-19,Telangana,1,3,8400
+2026-02-20,Maharashtra,1,2,2400

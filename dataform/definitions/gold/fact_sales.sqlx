@@ -1,0 +1,35 @@
+config {
+  type: "table",
+  schema: "gold",
+  description: "Sales fact table at order-level grain."
+}
+
+SELECT
+  o.order_id,
+
+  d.date_key,
+
+  c.customer_key,
+
+  p.product_key,
+
+  o.quantity,
+
+  o.unit_price,
+
+  o.total_sales,
+
+  o.status,
+
+  o.payment_method
+
+FROM ${ref("sales_enriched")} AS o
+
+LEFT JOIN ${ref("dim_customer")} AS c
+  ON o.customer_id = c.customer_id
+
+LEFT JOIN ${ref("dim_product")} AS p
+  ON o.product_id = p.product_id
+
+LEFT JOIN ${ref("dim_date")} AS d
+  ON o.order_date = d.full_date

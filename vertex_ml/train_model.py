@@ -31,7 +31,7 @@ if dataset is None:
     )
 
 
-print("\n✓ Vertex AI dataset found")
+print("\n[OK] Vertex AI dataset found")
 print("Name:", dataset.display_name)
 print("Resource:", dataset.resource_name)
 
@@ -63,7 +63,7 @@ model = job.run(
 
 
 print("\n===================================")
-print("✓ MODEL TRAINING COMPLETED")
+print("[OK] MODEL TRAINING COMPLETED")
 print("===================================")
 
 print("Model:", model.display_name)

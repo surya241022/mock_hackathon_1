@@ -77,7 +77,7 @@ print("Creating RAG documents...")
 job = client.query(create_documents_sql)
 job.result()
 
-print("✓ rag_documents created")
+print("[OK] rag_documents created")
 
 
 # ---------------------------------------------------------
@@ -106,8 +106,8 @@ print("Generating embeddings...")
 job = client.query(create_embeddings_sql)
 job.result()
 
-print("✓ Embeddings generated")
-print("✓ rag_embeddings created")
+print("[OK] Embeddings generated")
+print("[OK] rag_embeddings created")
 
 
 # ---------------------------------------------------------
@@ -123,7 +123,7 @@ FROM `{PROJECT_ID}.{DATASET}.rag_embeddings`
 result = client.query(check_sql).result()
 
 for row in result:
-    print(f"✓ Total embedded records: {row.total_records}")
+    print(f"[OK] Total embedded records: {row.total_records}")
 
 
 print("\nRAG embedding pipeline completed successfully.")

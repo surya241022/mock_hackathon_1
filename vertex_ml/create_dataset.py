@@ -23,6 +23,6 @@ dataset = aiplatform.TabularDataset.create(
     bq_source=BQ_SOURCE,
 )
 
-print("\n✓ Vertex AI dataset created")
+print("\n[OK] Vertex AI dataset created")
 print("Dataset name:", dataset.display_name)
 print("Dataset resource:", dataset.resource_name)

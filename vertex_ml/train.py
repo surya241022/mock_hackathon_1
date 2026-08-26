@@ -38,7 +38,7 @@ print("Creating ML training table...")
 job = client.query(query)
 job.result()
 
-print("✓ ML training table created")
+print("[OK] ML training table created")
 
 
 # Verify the table

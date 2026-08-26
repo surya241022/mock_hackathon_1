@@ -35,6 +35,10 @@ ENV/
 service-account*.json
 credentials*.json
 
+# Mock test artifacts
+.mock_bigquery.db
+.mock_gcs/
+
 # IDE
 .idea/
 .vscode/
